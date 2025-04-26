@@ -6,8 +6,8 @@
 <title>Giới thiệu bản thân - Quyen</title>
 
 <!-- SEO Metadata -->
-<meta name="description" content="Giới thiệu bản thân - Quách Văn Quyền">
-<meta name="keywords" content="Giới thiệu, Quách Văn Quyền, Personal Website, Quyen">
+<meta name="description" content="Giới thiệu bản thân Quách Văn Quyền - Đam mê khám phá, yêu thích âm nhạc và cuộc sống chân thành.">
+<meta name="keywords" content="Giới thiệu, Quách Văn Quyền, Personal Website, Profile cá nhân">
 <meta name="author" content="Quách Văn Quyền">
 
 <!-- Favicon -->
@@ -117,7 +117,6 @@ a:hover {
   border-radius: 8px;
   font-size: 16px;
   z-index: 1000;
-  cursor: pointer;
   transition: opacity 0.5s ease;
 }
 </style>
@@ -126,13 +125,16 @@ a:hover {
 <canvas id="stars"></canvas>
 <canvas id="fireflies"></canvas>
 <canvas id="ripple-canvas"></canvas>
-<div id="click-to-play">Click anywhere to play music 🎵</div>
+
+<div id="click-to-play">Click or scroll to play music 🎵</div>
+
 <div class="container">
   <img src="https://i.imgur.com/g3Bbyeh.jpeg" alt="Avatar" class="avatar">
   <div class="typewriter">
     <h1 id="typewriter-text"></h1>
   </div>
   <div class="divider"></div>
+
   <div class="section">
     <h2>QUACH VAN QUYEN</h2>
     <ul>
@@ -143,31 +145,42 @@ a:hover {
       <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr" target="_blank">Connect with me</a></li>
     </ul>
   </div>
+
   <div class="divider"></div>
+
   <div class="section">
     <h2>Personality</h2>
     <p>I am a calm and reserved person. I don't talk much, but when I meet the right person and truly understand them, I open up, I joke, and I share my world with them.</p>
   </div>
+
   <div class="divider"></div>
+
   <div class="section">
     <h2>Passion</h2>
     <p>Music has always been a companion in my life — especially sad songs, which seem to speak the words my heart sometimes can't.</p>
   </div>
+
   <div class="divider"></div>
+
   <div class="section">
     <h2>Future Direction</h2>
     <p>At this moment, I have no clear direction for the future. I only know that I am entangled in a one-sided love, trying to find my way through it.</p>
   </div>
+
   <div class="divider"></div>
+
   <div class="section">
     <h2>My Love Story</h2>
     <p>I am somewhat disappointed with love at the moment. Yet, I am grateful for it — grateful for having had the chance to know what it feels like to love someone wholeheartedly. I hope that someday, love will be kinder to me than it is now.</p>
   </div>
+
   <div class="divider"></div>
+
   <div class="section">
     <h2>Life Motto</h2>
     <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
   </div>
+
   <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
 </div>
 
@@ -184,7 +197,7 @@ function typeWriter() {
 }
 typeWriter();
 
-// Background effects
+// Stars background
 const stars = document.getElementById('stars').getContext('2d');
 stars.canvas.width = window.innerWidth;
 stars.canvas.height = window.innerHeight;
@@ -206,6 +219,7 @@ function drawStars() {
 }
 drawStars();
 
+// Fireflies background
 const fireflies = document.getElementById('fireflies').getContext('2d');
 fireflies.canvas.width = window.innerWidth;
 fireflies.canvas.height = window.innerHeight;
@@ -229,6 +243,7 @@ function drawFireflies() {
 }
 drawFireflies();
 
+// Ripple background
 const rippleCanvas = document.getElementById('ripple-canvas');
 const rippleCtx = rippleCanvas.getContext('2d');
 rippleCanvas.width = window.innerWidth;
@@ -251,7 +266,7 @@ function drawRipples() {
 }
 drawRipples();
 
-// Music player
+// Music control
 let musicPlayer;
 let musicReady = false;
 function onYouTubeIframeAPIReady() {
@@ -268,7 +283,7 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-document.body.addEventListener('click', function playMusicOnce() {
+function playMusicOnce() {
   if (musicReady) {
     musicPlayer.unMute();
     musicPlayer.setVolume(50);
@@ -276,8 +291,11 @@ document.body.addEventListener('click', function playMusicOnce() {
     clickToPlay.style.opacity = '0';
     setTimeout(() => clickToPlay.style.display = 'none', 500);
     document.body.removeEventListener('click', playMusicOnce);
+    document.body.removeEventListener('scroll', playMusicOnce);
   }
-});
+}
+document.body.addEventListener('click', playMusicOnce);
+document.body.addEventListener('scroll', playMusicOnce);
 </script>
 </body>
 </html>
