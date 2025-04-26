@@ -207,4 +207,70 @@ drawStars();
 const fireflies = document.getElementById('fireflies').getContext('2d');
 fireflies.canvas.width = window.innerWidth;
 fireflies.canvas.height = window.innerHeight;
-let flies = []
+let flies = [];
+for (let i = 0; i < 50; i++) {
+  flies.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 3 + 1, dx: Math.random() * 2 - 1, dy: Math.random() * 2 - 1});
+}
+function drawFireflies() {
+  fireflies.clearRect(0, 0, fireflies.canvas.width, fireflies.canvas.height);
+  fireflies.fillStyle = 'rgba(255,255,200,0.7)';
+  for (let f of flies) {
+    fireflies.beginPath();
+    fireflies.arc(f.x, f.y, f.size, 0, Math.PI * 2);
+    fireflies.fill();
+    f.x += f.dx;
+    f.y += f.dy;
+    if (f.x < 0 || f.x > window.innerWidth) f.dx *= -1;
+    if (f.y < 0 || f.y > window.innerHeight) f.dy *= -1;
+  }
+  requestAnimationFrame(drawFireflies);
+}
+drawFireflies();
+
+const rippleCanvas = document.getElementById('ripple-canvas');
+const rippleCtx = rippleCanvas.getContext('2d');
+rippleCanvas.width = window.innerWidth;
+rippleCanvas.height = window.innerHeight;
+let ripples = [];
+document.addEventListener('click', e => {
+  ripples.push({x: e.clientX, y: e.clientY, r: 0});
+});
+function drawRipples() {
+  rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+  rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
+  for (let r of ripples) {
+    rippleCtx.beginPath();
+    rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+    rippleCtx.stroke();
+    r.r += 2;
+    if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
+  }
+  requestAnimationFrame(drawRipples);
+}
+drawRipples();
+
+let musicPlayer;
+function initMusicPlayer() {
+  musicPlayer = new YT.Player('youtube-music', {
+    events: {
+      'onReady': function(event) {
+        document.body.addEventListener('click', function once() {
+          event.target.unMute();
+          event.target.setVolume(50);
+          document.getElementById('click-to-play').style.display = 'none';
+          document.body.removeEventListener('click', once);
+        });
+      }
+    }
+  });
+}
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+function onYouTubeIframeAPIReady() {
+  initMusicPlayer();
+}
+</script>
+</body>
+</html>
