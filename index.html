@@ -107,6 +107,18 @@ a:hover {
   transition: transform 0.1s ease;
   z-index: 10;
 }
+#click-to-play {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #00bfff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 1000;
+}
 </style>
 </head>
 <body>
@@ -114,16 +126,13 @@ a:hover {
 <canvas id="fireflies"></canvas>
 <canvas id="ripple-canvas"></canvas>
 <div class="light-follower"></div>
+<div id="click-to-play">Click anywhere to play music 🎵</div>
 <div class="container">
-
   <img src="https://i.imgur.com/g3Bbyeh.jpeg" alt="Avatar" class="avatar">
-
   <div class="typewriter">
-    <h1>Hello, my name is Quyen</h1>
+    <h1 id="typewriter-text"></h1>
   </div>
-
   <div class="divider"></div>
-
   <div class="section">
     <h2>QUACH VAN QUYEN</h2>
     <ul>
@@ -134,47 +143,47 @@ a:hover {
       <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr" target="_blank">Connect with me</a></li>
     </ul>
   </div>
-
   <div class="divider"></div>
-
   <div class="section">
     <h2>Personality</h2>
     <p>I am a calm and reserved person. I don't talk much, but when I meet the right person and truly understand them, I open up, I joke, and I share my world with them.</p>
   </div>
-
   <div class="divider"></div>
-
   <div class="section">
     <h2>Passion</h2>
     <p>Music has always been a companion in my life — especially sad songs, which seem to speak the words my heart sometimes can't.</p>
   </div>
-
   <div class="divider"></div>
-
   <div class="section">
     <h2>Future Direction</h2>
     <p>At this moment, I have no clear direction for the future. I only know that I am entangled in a one-sided love, trying to find my way through it.</p>
   </div>
-
   <div class="divider"></div>
-
   <div class="section">
     <h2>My Love Story</h2>
     <p>I am somewhat disappointed with love at the moment. Yet, I am grateful for it — grateful for having had the chance to know what it feels like to love someone wholeheartedly. I hope that someday, love will be kinder to me than it is now.</p>
   </div>
-
   <div class="divider"></div>
-
   <div class="section">
     <h2>Life Motto</h2>
     <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
   </div>
-
   <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
 </div>
-
 <script>
-// Starfield
+// Typewriter effect
+const text = "Hello, my name is Quyen";
+let index = 0;
+function typeWriter() {
+  if (index < text.length) {
+    document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 100);
+  }
+}
+typeWriter();
+
+// Hiệu ứng nền
 const stars = document.getElementById('stars').getContext('2d');
 stars.canvas.width = window.innerWidth;
 stars.canvas.height = window.innerHeight;
@@ -195,8 +204,6 @@ function drawStars() {
   requestAnimationFrame(drawStars);
 }
 drawStars();
-
-// Fireflies
 const fireflies = document.getElementById('fireflies').getContext('2d');
 fireflies.canvas.width = window.innerWidth;
 fireflies.canvas.height = window.innerHeight;
@@ -219,8 +226,6 @@ function drawFireflies() {
   requestAnimationFrame(drawFireflies);
 }
 drawFireflies();
-
-// Ripple Effect
 const rippleCanvas = document.getElementById('ripple-canvas');
 const rippleCtx = rippleCanvas.getContext('2d');
 rippleCanvas.width = window.innerWidth;
@@ -242,15 +247,12 @@ function drawRipples() {
   requestAnimationFrame(drawRipples);
 }
 drawRipples();
-
-// Light Follower
 const light = document.querySelector('.light-follower');
 document.addEventListener('mousemove', (e) => {
   light.style.top = `${e.clientY}px`;
   light.style.left = `${e.clientX}px`;
 });
 
-// YouTube music auto unmute after click
 let musicPlayer;
 function initMusicPlayer() {
   musicPlayer = new YT.Player('youtube-music', {
@@ -259,6 +261,7 @@ function initMusicPlayer() {
         document.body.addEventListener('click', function once() {
           event.target.unMute();
           event.target.setVolume(50);
+          document.getElementById('click-to-play').style.display = 'none';
           document.body.removeEventListener('click', once);
         });
       }
@@ -269,7 +272,6 @@ var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 function onYouTubeIframeAPIReady() {
   initMusicPlayer();
 }
