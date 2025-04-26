@@ -23,6 +23,7 @@
 </script>
 
 <style>
+/* CSS giữ nguyên đẹp */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -182,12 +183,12 @@ a:hover {
     <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
   </div>
 
-  <!-- Nhạc YouTube bắt đầu từ 0:33 -->
-  <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&start=33&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
+  <!-- Nhạc YouTube: KHÔNG có start=33, tự điều khiển bằng JavaScript -->
+  <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
 </div>
 
 <script>
-// Typewriter effect
+// Code hiệu ứng như cũ (typewriter, stars, fireflies, ripple) -- giữ nguyên
 const text = "Hello, my name is Quyen";
 let index = 0;
 function typeWriter() {
@@ -199,7 +200,8 @@ function typeWriter() {
 }
 typeWriter();
 
-// Stars background
+// Bầu trời sao + đom đóm + ripple effect (copy nguyên y cũ)
+
 const stars = document.getElementById('stars').getContext('2d');
 stars.canvas.width = window.innerWidth;
 stars.canvas.height = window.innerHeight;
@@ -221,7 +223,6 @@ function drawStars() {
 }
 drawStars();
 
-// Fireflies background
 const fireflies = document.getElementById('fireflies').getContext('2d');
 fireflies.canvas.width = window.innerWidth;
 fireflies.canvas.height = window.innerHeight;
@@ -245,7 +246,6 @@ function drawFireflies() {
 }
 drawFireflies();
 
-// Ripple background
 const rippleCanvas = document.getElementById('ripple-canvas');
 const rippleCtx = rippleCanvas.getContext('2d');
 rippleCanvas.width = window.innerWidth;
@@ -268,7 +268,7 @@ function drawRipples() {
 }
 drawRipples();
 
-// Music control
+// Youtube Player
 let musicPlayer;
 let musicReady = false;
 function onYouTubeIframeAPIReady() {
@@ -287,16 +287,19 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function playMusicOnce() {
   if (musicReady) {
+    musicPlayer.seekTo(33, true); // CHÍNH XÁC: Seek tới 33 giây
     musicPlayer.unMute();
     musicPlayer.setVolume(50);
     const clickToPlay = document.getElementById('click-to-play');
     clickToPlay.style.opacity = '0';
     setTimeout(() => clickToPlay.style.display = 'none', 500);
+
     document.body.removeEventListener('click', playMusicOnce);
     document.body.removeEventListener('touchstart', playMusicOnce);
     document.body.removeEventListener('wheel', playMusicOnce);
   }
 }
+
 document.body.addEventListener('click', playMusicOnce);
 document.body.addEventListener('touchstart', playMusicOnce);
 document.body.addEventListener('wheel', playMusicOnce);
