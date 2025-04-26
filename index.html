@@ -121,6 +121,7 @@ a:hover {
 }
 </style>
 </head>
+
 <body>
 <canvas id="stars"></canvas>
 <canvas id="fireflies"></canvas>
@@ -181,7 +182,8 @@ a:hover {
     <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
   </div>
 
-  <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
+  <!-- Nhạc YouTube bắt đầu từ 0:33 -->
+  <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&start=33&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
 </div>
 
 <script>
@@ -291,11 +293,14 @@ function playMusicOnce() {
     clickToPlay.style.opacity = '0';
     setTimeout(() => clickToPlay.style.display = 'none', 500);
     document.body.removeEventListener('click', playMusicOnce);
-    document.body.removeEventListener('scroll', playMusicOnce);
+    document.body.removeEventListener('touchstart', playMusicOnce);
+    document.body.removeEventListener('wheel', playMusicOnce);
   }
 }
 document.body.addEventListener('click', playMusicOnce);
-document.body.addEventListener('scroll', playMusicOnce);
+document.body.addEventListener('touchstart', playMusicOnce);
+document.body.addEventListener('wheel', playMusicOnce);
 </script>
+
 </body>
 </html>
