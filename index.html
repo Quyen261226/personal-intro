@@ -8,17 +8,18 @@
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background: #000000; /* Nền đen */
-      color: #ffffff;       /* Chữ trắng */
+      background: #000000;
+      color: #ffffff;
       padding: 20px;
     }
     .container {
       max-width: 800px;
       margin: auto;
-      background: #111; /* hộp nội dung đen nhẹ hơn */
+      background: #111;
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      text-align: center;
     }
     h1 {
       color: #00bfff;
@@ -27,15 +28,27 @@
       width: 120px;
       border-radius: 50%;
       margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .avatar:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
     }
     a {
       color: #87cefa;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+    }
+    audio {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
- <img src="https://https://imgur.com/a/RO0sVfJ" alt="Ảnh đại diện" class="avatar">
+    <img src="https://i.imgur.com/g3Bbyeh.jpeg" alt="Ảnh đại diện" class="avatar">
     <h1>Hello, my name is Quyen</h1>
     <p>I used to study in a rural school and then moved to Bình Dương to continue. I love gentle things and wish the next person better. In the future, I want to conduct biological experiments on the human body.</p>
     <div class="info">
@@ -48,6 +61,13 @@
         <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr" target="_blank">Connect with me</a></li>
       </ul>
     </div>
+
+    <!-- Nhạc nền -->
+    <audio controls autoplay loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      Trình duyệt của bạn không hỗ trợ phát nhạc.
+    </audio>
+
   </div>
 </body>
 </html>
