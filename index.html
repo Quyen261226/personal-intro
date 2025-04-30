@@ -1,146 +1,156 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quách Văn Quyền | Personal Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quách Văn Quyền | Personal Profile</title>
 
-<!-- SEO Metadata -->
-<meta name="description" content="Official personal introduction of Quách Văn Quyền - Passionate explorer, music lover, and living sincerely.">
-<meta name="keywords" content="Quách Văn Quyền, Personal Website, Profile, Music, Life Journey, Love Story">
-<meta name="author" content="Quách Văn Quyền">
+  <!-- SEO Metadata -->
+  <meta name="description" content="Official personal introduction of Quách Văn Quyền - Passionate explorer, music lover, and living sincerely.">
+  <meta name="keywords" content="Quách Văn Quyền, Personal Website, Profile, Music, Life Journey, Love Story">
+  <meta name="author" content="Quách Văn Quyền">
 
-<!-- Open Graph (Facebook, Zalo, LinkedIn...) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quách Văn Quyền | Personal Profile">
-<meta property="og:description" content="Official personal introduction of Quách Văn Quyền - Passionate explorer, music lover, and living sincerely.">
-<meta property="og:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
-<meta property="og:url" content="https://quyen261226.github.io/personal-intro/">
-<meta property="og:site_name" content="Quách Văn Quyền">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Quách Văn Quyền | Personal Profile">
+  <meta property="og:description" content="Passionate explorer, music lover, and living sincerely.">
+  <meta property="og:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
+  <meta property="og:url" content="https://quyen261226.github.io/personal-intro/">
+  <meta property="og:type" content="website">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Quách Văn Quyền | Personal Profile">
-<meta name="twitter:description" content="Official personal introduction of Quách Văn Quyền - Passionate explorer, music lover, and living sincerely.">
-<meta name="twitter:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quách Văn Quyền | Personal Profile">
+  <meta name="twitter:description" content="Passionate explorer, music lover, and living sincerely.">
+  <meta name="twitter:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
 
-<!-- Theme Color (Mobile Chrome) -->
-<meta name="theme-color" content="#0f3460">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0f3460">
 
-<!-- Favicon -->
-<link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-902BEJDWQF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-902BEJDWQF');
-</script>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Quách Văn Quyền",
+    "email": "quachvanquyen261226@gmail.com",
+    "birthDate": "2006-12-26",
+    "url": "https://quyen261226.github.io/personal-intro/",
+    "image": "https://i.imgur.com/g3Bbyeh.jpeg",
+    "sameAs": [
+      "https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr"
+    ]
+  }
+  </script>
 
-<style>
-/* CSS giữ nguyên */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: linear-gradient(-45deg, #000000, #1a1a2e, #16213e, #0f3460);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color: #ffffff;
-  overflow-x: hidden;
-}
-@keyframes gradientBG {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px 20px;
-  position: relative;
-  z-index: 2;
-}
-.section {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 40px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-}
-.divider {
-  height: 1px;
-  background: rgba(255,255,255,0.3);
-  margin: 40px 0;
-}
-.avatar {
-  width: 120px;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  display: block;
-  box-shadow: 0 0 20px rgba(0,191,255,0.6);
-  transition: 0.5s;
-}
-.avatar:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 30px rgba(0, 191, 255, 1);
-}
-h1, h2 {
-  text-align: center;
-}
-h2 {
-  color: #00bfff;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  line-height: 1.8;
-}
-strong {
-  color: #00bfff;
-}
-a {
-  color: #87cefa;
-  text-decoration: none;
-  transition: 0.3s;
-}
-a:hover {
-  color: #00ffff;
-  animation: bounce 1s infinite;
-  text-shadow: 0 0 5px #00ffff;
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-10px);}
-  60% {transform: translateY(-5px);}
-}
-#stars, #fireflies, #ripple-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-#click-to-play {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.7);
-  color: #00bfff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  z-index: 1000;
-  transition: opacity 0.5s ease;
-}
-</style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-902BEJDWQF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-902BEJDWQF');
+  </script>
+
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+      --accent-color: #00bfff;
+    }
+    [data-theme="light"] {
+      --bg-color: #f0f8ff;
+      --text-color: #111;
+      --accent-color: #007acc;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.5s, color 0.5s;
+      overflow-x: hidden;
+    }
+    .toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .avatar {
+      width: 130px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: block;
+      box-shadow: 0 0 30px rgba(0,191,255,0.8);
+      transition: 0.5s;
+    }
+    .avatar:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 0 40px rgba(0,191,255,1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: var(--accent-color);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+    .section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      margin: 40px 0;
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-shadow: 0 0 5px var(--accent-color);
+    }
+    #click-to-play {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.7);
+      color: var(--accent-color);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      z-index: 1000;
+      transition: opacity 0.5s ease;
+    }
+  </style>
 </head>
+<body data-theme="dark">
+<button class="toggle-theme" onclick="toggleTheme()">Toggle Light/Dark</button>
 
-<body>
 <canvas id="stars"></canvas>
 <canvas id="fireflies"></canvas>
 <canvas id="ripple-canvas"></canvas>
@@ -152,6 +162,7 @@ a:hover {
   <div class="typewriter">
     <h1 id="typewriter-text"></h1>
   </div>
+
   <div class="divider"></div>
 
   <div class="section">
@@ -199,13 +210,134 @@ a:hover {
     <h2>Life Motto</h2>
     <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
   </div>
-
-  <iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
 </div>
 
+<!-- YouTube nhạc nền -->
+<iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
+
+<!-- Scripts -->
 <script>
-// Các hiệu ứng như bạn cũ
-// (typewriter, stars, fireflies, ripple, YouTube autoplay như bạn đưa)
+const text = "Hello, my name is Quyen";
+let index = 0;
+function typeWriter() {
+  if (index < text.length) {
+    document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 100);
+  }
+}
+typeWriter();
+
+// Toggle Light/Dark
+function toggleTheme() {
+  const current = document.body.getAttribute("data-theme");
+  document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+}
+
+// Stars
+const stars = document.getElementById('stars').getContext('2d');
+stars.canvas.width = window.innerWidth;
+stars.canvas.height = window.innerHeight;
+let starArray = [];
+for (let i = 0; i < 150; i++) {
+  starArray.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 2, speed: Math.random() * 0.5});
+}
+function drawStars() {
+  stars.clearRect(0, 0, stars.canvas.width, stars.canvas.height);
+  stars.fillStyle = '#fff';
+  for (let s of starArray) {
+    stars.beginPath();
+    stars.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+    stars.fill();
+    s.x += s.speed;
+    if (s.x > window.innerWidth) s.x = 0;
+  }
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+
+// Fireflies
+const fireflies = document.getElementById('fireflies').getContext('2d');
+fireflies.canvas.width = window.innerWidth;
+fireflies.canvas.height = window.innerHeight;
+let flies = [];
+for (let i = 0; i < 50; i++) {
+  flies.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 3 + 1, dx: Math.random() * 2 - 1, dy: Math.random() * 2 - 1});
+}
+function drawFireflies() {
+  fireflies.clearRect(0, 0, fireflies.canvas.width, fireflies.canvas.height);
+  fireflies.fillStyle = 'rgba(255,255,200,0.7)';
+  for (let f of flies) {
+    fireflies.beginPath();
+    fireflies.arc(f.x, f.y, f.size, 0, Math.PI * 2);
+    fireflies.fill();
+    f.x += f.dx;
+    f.y += f.dy;
+    if (f.x < 0 || f.x > window.innerWidth) f.dx *= -1;
+    if (f.y < 0 || f.y > window.innerHeight) f.dy *= -1;
+  }
+  requestAnimationFrame(drawFireflies);
+}
+drawFireflies();
+
+// Ripple
+const rippleCanvas = document.getElementById('ripple-canvas');
+const rippleCtx = rippleCanvas.getContext('2d');
+rippleCanvas.width = window.innerWidth;
+rippleCanvas.height = window.innerHeight;
+let ripples = [];
+document.addEventListener('click', e => {
+  ripples.push({x: e.clientX, y: e.clientY, r: 0});
+});
+function drawRipples() {
+  rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+  rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
+  for (let r of ripples) {
+    rippleCtx.beginPath();
+    rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+    rippleCtx.stroke();
+    r.r += 2;
+    if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
+  }
+  requestAnimationFrame(drawRipples);
+}
+drawRipples();
+
+// YouTube music control
+let musicPlayer;
+let musicReady = false;
+function onYouTubeIframeAPIReady() {
+  musicPlayer = new YT.Player('youtube-music', {
+    events: {
+      'onReady': function(event) {
+        musicReady = true;
+      }
+    }
+  });
+}
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function playMusicOnce() {
+  if (musicReady) {
+    musicPlayer.seekTo(33, true);
+    musicPlayer.unMute();
+    musicPlayer.setVolume(50);
+    const clickToPlay = document.getElementById('click-to-play');
+    clickToPlay.style.opacity = '0';
+    setTimeout(() => clickToPlay.style.display = 'none', 500);
+
+    document.body.removeEventListener('click', playMusicOnce);
+    document.body.removeEventListener('touchstart', playMusicOnce);
+    document.body.removeEventListener('wheel', playMusicOnce);
+  }
+}
+
+document.body.addEventListener('click', playMusicOnce);
+document.body.addEventListener('touchstart', playMusicOnce);
+document.body.addEventListener('wheel', playMusicOnce);
 </script>
 </body>
 </html>
