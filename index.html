@@ -1,35 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quách Văn Quyền | Personal Profile</title>
 
   <!-- SEO Metadata -->
   <meta name="description" content="Official personal introduction of Quách Văn Quyền - Passionate explorer, music lover, and living sincerely.">
   <meta name="keywords" content="Quách Văn Quyền, Personal Website, Profile, Music, Life Journey, Love Story">
   <meta name="author" content="Quách Văn Quyền">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Quách Văn Quyền | Personal Profile">
   <meta property="og:description" content="Passionate explorer, music lover, and living sincerely.">
   <meta property="og:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
   <meta property="og:url" content="https://quyen261226.github.io/personal-intro/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Quách Văn Quyền | Personal Profile">
   <meta name="twitter:description" content="Passionate explorer, music lover, and living sincerely.">
   <meta name="twitter:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
-
-  <!-- Theme Color -->
   <meta name="theme-color" content="#0f3460">
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
-
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,16 +51,15 @@
       --accent-color: #00bfff;
     }
     [data-theme="light"] {
-      --bg-color: #f0f8ff;
+      --bg-color: #f9f9f9;
       --text-color: #111;
       --accent-color: #007acc;
     }
-
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      font-family: Arial, sans-serif;
       transition: background 0.5s, color 0.5s;
       overflow-x: hidden;
     }
@@ -78,7 +67,7 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       color: var(--accent-color);
       border: 1px solid var(--accent-color);
       padding: 8px 16px;
@@ -86,10 +75,22 @@
       cursor: pointer;
       z-index: 999;
     }
+    #click-to-play {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.7);
+      color: var(--accent-color);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      z-index: 1000;
+    }
     .container {
       max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 80px auto 60px;
+      padding: 20px;
       position: relative;
       z-index: 2;
     }
@@ -114,6 +115,13 @@
       padding: 0;
       line-height: 1.8;
     }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-shadow: 0 0 5px var(--accent-color);
+    }
     .section {
       background: rgba(255,255,255,0.05);
       border-radius: 12px;
@@ -126,43 +134,29 @@
       background: rgba(255,255,255,0.3);
       margin: 40px 0;
     }
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-    a:hover {
-      text-shadow: 0 0 5px var(--accent-color);
-    }
-    #click-to-play {
+    canvas {
       position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0,0,0,0.7);
-      color: var(--accent-color);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 16px;
-      z-index: 1000;
-      transition: opacity 0.5s ease;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
     }
   </style>
 </head>
+
 <body data-theme="dark">
 <button class="toggle-theme" onclick="toggleTheme()">Toggle Light/Dark</button>
 
 <canvas id="stars"></canvas>
 <canvas id="fireflies"></canvas>
 <canvas id="ripple-canvas"></canvas>
-
 <div id="click-to-play">Click or scroll to play music 🎵</div>
 
 <div class="container">
   <img src="https://i.imgur.com/g3Bbyeh.jpeg" alt="Avatar" class="avatar">
-  <div class="typewriter">
-    <h1 id="typewriter-text"></h1>
-  </div>
-
+  <h1 id="typewriter-text"></h1>
   <div class="divider"></div>
 
   <div class="section">
@@ -178,44 +172,27 @@
 
   <div class="divider"></div>
 
-  <div class="section">
-    <h2>Personality</h2>
-    <p>I am a calm and reserved person. I don't talk much, but when I meet the right person and truly understand them, I open up, I joke, and I share my world with them.</p>
-  </div>
+  <div class="section"><h2>Personality</h2><p>I am a calm and reserved person. I don't talk much, but when I meet the right person and truly understand them, I open up, I joke, and I share my world with them.</p></div>
 
   <div class="divider"></div>
 
-  <div class="section">
-    <h2>Passion</h2>
-    <p>Music has always been a companion in my life — especially sad songs, which seem to speak the words my heart sometimes can't.</p>
-  </div>
+  <div class="section"><h2>Passion</h2><p>Music has always been a companion in my life — especially sad songs, which seem to speak the words my heart sometimes can't.</p></div>
 
   <div class="divider"></div>
 
-  <div class="section">
-    <h2>Future Direction</h2>
-    <p>At this moment, I have no clear direction for the future. I only know that I am entangled in a one-sided love, trying to find my way through it.</p>
-  </div>
+  <div class="section"><h2>Future Direction</h2><p>I only know that I am entangled in a one-sided love, trying to find my way through it.</p></div>
 
   <div class="divider"></div>
 
-  <div class="section">
-    <h2>My Love Story</h2>
-    <p>I am somewhat disappointed with love at the moment. Yet, I am grateful for it — grateful for having had the chance to know what it feels like to love someone wholeheartedly. I hope that someday, love will be kinder to me than it is now.</p>
-  </div>
+  <div class="section"><h2>My Love Story</h2><p>Somewhat disappointed with love. But still grateful for knowing how to love wholeheartedly.</p></div>
 
   <div class="divider"></div>
 
-  <div class="section">
-    <h2>Life Motto</h2>
-    <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
-  </div>
+  <div class="section"><h2>Life Motto</h2><p><em>"I believe in kindness, loyalty, and perseverance."</em></p></div>
 </div>
 
-<!-- YouTube nhạc nền -->
-<iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" frameborder="0" allow="autoplay"></iframe>
+<iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0;" frameborder="0" allow="autoplay"></iframe>
 
-<!-- Scripts -->
 <script>
 const text = "Hello, my name is Quyen";
 let index = 0;
@@ -228,13 +205,11 @@ function typeWriter() {
 }
 typeWriter();
 
-// Toggle Light/Dark
 function toggleTheme() {
   const current = document.body.getAttribute("data-theme");
   document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
 }
 
-// Stars
 const stars = document.getElementById('stars').getContext('2d');
 stars.canvas.width = window.innerWidth;
 stars.canvas.height = window.innerHeight;
@@ -256,7 +231,6 @@ function drawStars() {
 }
 drawStars();
 
-// Fireflies
 const fireflies = document.getElementById('fireflies').getContext('2d');
 fireflies.canvas.width = window.innerWidth;
 fireflies.canvas.height = window.innerHeight;
@@ -280,7 +254,6 @@ function drawFireflies() {
 }
 drawFireflies();
 
-// Ripple
 const rippleCanvas = document.getElementById('ripple-canvas');
 const rippleCtx = rippleCanvas.getContext('2d');
 rippleCanvas.width = window.innerWidth;
@@ -303,7 +276,6 @@ function drawRipples() {
 }
 drawRipples();
 
-// YouTube music control
 let musicPlayer;
 let musicReady = false;
 function onYouTubeIframeAPIReady() {
@@ -317,24 +289,20 @@ function onYouTubeIframeAPIReady() {
 }
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+document.getElementsByTagName('head')[0].appendChild(tag);
 
 function playMusicOnce() {
   if (musicReady) {
     musicPlayer.seekTo(33, true);
     musicPlayer.unMute();
     musicPlayer.setVolume(50);
-    const clickToPlay = document.getElementById('click-to-play');
-    clickToPlay.style.opacity = '0';
-    setTimeout(() => clickToPlay.style.display = 'none', 500);
-
+    document.getElementById('click-to-play').style.opacity = '0';
+    setTimeout(() => document.getElementById('click-to-play').style.display = 'none', 500);
     document.body.removeEventListener('click', playMusicOnce);
     document.body.removeEventListener('touchstart', playMusicOnce);
     document.body.removeEventListener('wheel', playMusicOnce);
   }
 }
-
 document.body.addEventListener('click', playMusicOnce);
 document.body.addEventListener('touchstart', playMusicOnce);
 document.body.addEventListener('wheel', playMusicOnce);
