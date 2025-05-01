@@ -4,30 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quách Văn Quyền | Personal Profile</title>
-  <meta name="description" content="Trang cá nhân của Quách Văn Quyền - sống chân thành, yêu âm nhạc, tìm kiếm sự kết nối thực sự.">
+
+  <!-- SEO, JSON-LD, OpenGraph, Twitter... như trước (giữ nguyên) -->
+  <meta name="description" content="Quách Văn Quyền - Sống chân thành, đam mê khám phá và yêu âm nhạc buồn.">
+  <meta property="og:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
   <meta name="theme-color" content="#0f3460">
   <link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
+
+  <!-- YouTube API Script -->
   <script>
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   </script>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #000;
-      color: #fff;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
     .container {
       max-width: 800px;
-      margin: 60px auto;
+      margin: 80px auto 60px;
       padding: 20px;
+      position: relative;
+      z-index: 2;
     }
-    .section { margin-bottom: 40px; }
-    h1, h2 { color: #00bfff; text-align: center; }
-    p, li { font-size: 16px; line-height: 1.6; }
-    .quote, .message { font-style: italic; color: #ccc; text-align: center; margin-top: 40px; }
+    .avatar {
+      width: 130px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: block;
+      box-shadow: 0 0 30px rgba(0,191,255,0.8);
+      transition: 0.5s;
+    }
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00bfff;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+    .section {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      margin: 40px 0;
+    }
     #click-to-play {
       position: fixed;
       top: 20px;
@@ -39,77 +85,118 @@
       border-radius: 8px;
       font-size: 16px;
       z-index: 1000;
+      transition: opacity 0.5s ease;
     }
   </style>
 </head>
 
 <body>
+<canvas id="stars"></canvas>
+<canvas id="fireflies"></canvas>
+<canvas id="ripple-canvas"></canvas>
+
 <div id="click-to-play">Click or scroll to play music 🎵</div>
 
-<iframe id="youtube-music"
-  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&mute=1&autoplay=1&loop=1&playlist=QIrs3hRL-4g"
-  style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" frameborder="0" allow="autoplay">
-</iframe>
-
 <div class="container">
-  <h1>Quách Văn Quyền</h1>
+  <img src="https://i.imgur.com/g3Bbyeh.jpeg" alt="Avatar" class="avatar">
+  <h1>Hello, my name is Quyen</h1>
+  <div class="divider"></div>
 
   <div class="section">
-    <h2>Hành trình (2006 – 07/2024)</h2>
+    <h2>QUACH VAN QUYEN</h2>
     <ul>
-      <li>2006 – Tôi đến với thế giới này, lặng lẽ như cách tôi đang sống.</li>
-      <li>2018 – Tôi bắt đầu hiểu sự cô đơn có thể vừa nhẹ tênh, vừa nặng trĩu.</li>
-      <li>07/2024 – Tôi biết yêu… và biết thất vọng.</li>
+      <li><strong>Birthday:</strong> 26/12/2006</li>
+      <li><strong>Email:</strong> quachvanquyen261226@gmail.com</li>
+      <li><strong>Hobbies:</strong> Exploring unknown places, learning new things</li>
+      <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/" target="_blank">Connect</a></li>
     </ul>
-  </div>
-
-  <div class="section">
-    <h2>Things I believe in</h2>
-    <ul>
-      <li>Chân thành không bao giờ sai</li>
-      <li>Im lặng là một loại sức mạnh</li>
-      <li>Âm nhạc là ngôn ngữ của trái tim</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Fun facts</h2>
-    <ul>
-      <li>Tôi cười nhiều, nhưng không phải lúc nào cũng vui</li>
-      <li>Tôi thích mưa vì nó che giấu được nước mắt</li>
-      <li>Tôi thường viết ra điều mình không dám nói</li>
-    </ul>
-  </div>
-
-  <div class="section quote">
-    <p><strong>VI:</strong> Tôi đang tìm một người không cần hoàn hảo – chỉ cần không giả vờ.</p>
-    <p><strong>EN:</strong> I'm looking for someone who doesn't need to be perfect – just honest.</p>
-  </div>
-
-  <div class="section">
-    <h2>Nếu bạn là tôi… / If you were me…</h2>
-    <p><strong>VI:</strong> Nếu bạn là tôi, với tất cả điều đã trải qua, bạn sẽ chọn im lặng hay nói thật lòng – dù biết trước kết quả vẫn là buồn?</p>
-    <p><strong>EN:</strong> If you were me, after all I’ve been through, would you stay silent or speak the truth – even if you knew it would still hurt?</p>
-
-    <p><strong>VI:</strong> Tôi sẽ vẫn nói thật. Không phải vì hy vọng – mà vì tôi không muốn sống trong tiếc nuối.</p>
-    <p><strong>EN:</strong> I would still speak my truth. Not because I hope – but because I don’t want to live with regret.</p>
-
-    <p><strong>VI:</strong> Tôi không giả vờ, vì tôi không muốn trái tim mình im lặng mãi.</p>
-    <p><strong>EN:</strong> I don’t pretend, because I don’t want my heart to stay silent forever.</p>
-  </div>
-
-  <div class="section message">
-    <p><strong>VI:</strong> Nếu bạn đọc đến đây, có thể bạn là người đã từng bước vào đời tôi – hoặc sắp bước vào. Cảm ơn vì đã dừng lại, dù chỉ là vài giây…</p>
-    <p><strong>EN:</strong> If you've read this far, maybe you're someone who has stepped into my life — or is about to. Thank you for stopping by, even if only for a few seconds…</p>
   </div>
 </div>
 
+<!-- YouTube nhạc nền -->
+<iframe id="youtube-music"
+  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&mute=1&autoplay=1&loop=1&playlist=QIrs3hRL-4g"
+  style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;"
+  frameborder="0" allow="autoplay">
+</iframe>
+
 <script>
+  // Hiệu ứng typewriter
+  // Hiệu ứng stars
+  const stars = document.getElementById('stars').getContext('2d');
+  stars.canvas.width = window.innerWidth;
+  stars.canvas.height = window.innerHeight;
+  let starArray = [];
+  for (let i = 0; i < 150; i++) {
+    starArray.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 2, speed: Math.random() * 0.5});
+  }
+  function drawStars() {
+    stars.clearRect(0, 0, stars.canvas.width, stars.canvas.height);
+    stars.fillStyle = '#fff';
+    for (let s of starArray) {
+      stars.beginPath();
+      stars.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+      stars.fill();
+      s.x += s.speed;
+      if (s.x > window.innerWidth) s.x = 0;
+    }
+    requestAnimationFrame(drawStars);
+  }
+  drawStars();
+
+  // Hiệu ứng fireflies
+  const fireflies = document.getElementById('fireflies').getContext('2d');
+  fireflies.canvas.width = window.innerWidth;
+  fireflies.canvas.height = window.innerHeight;
+  let flies = [];
+  for (let i = 0; i < 50; i++) {
+    flies.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 3 + 1, dx: Math.random() * 2 - 1, dy: Math.random() * 2 - 1});
+  }
+  function drawFireflies() {
+    fireflies.clearRect(0, 0, fireflies.canvas.width, fireflies.canvas.height);
+    fireflies.fillStyle = 'rgba(255,255,200,0.7)';
+    for (let f of flies) {
+      fireflies.beginPath();
+      fireflies.arc(f.x, f.y, f.size, 0, Math.PI * 2);
+      fireflies.fill();
+      f.x += f.dx;
+      f.y += f.dy;
+      if (f.x < 0 || f.x > window.innerWidth) f.dx *= -1;
+      if (f.y < 0 || f.y > window.innerHeight) f.dy *= -1;
+    }
+    requestAnimationFrame(drawFireflies);
+  }
+  drawFireflies();
+
+  // Hiệu ứng ripple
+  const rippleCanvas = document.getElementById('ripple-canvas');
+  const rippleCtx = rippleCanvas.getContext('2d');
+  rippleCanvas.width = window.innerWidth;
+  rippleCanvas.height = window.innerHeight;
+  let ripples = [];
+  document.addEventListener('click', e => {
+    ripples.push({x: e.clientX, y: e.clientY, r: 0});
+  });
+  function drawRipples() {
+    rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+    rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
+    for (let r of ripples) {
+      rippleCtx.beginPath();
+      rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+      rippleCtx.stroke();
+      r.r += 2;
+      if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
+    }
+    requestAnimationFrame(drawRipples);
+  }
+  drawRipples();
+
+  // Nhạc YouTube API
   let musicPlayer;
   function onYouTubeIframeAPIReady() {
     musicPlayer = new YT.Player('youtube-music', {
       events: {
-        'onReady': function(event) {
+        'onReady': () => {
           document.body.addEventListener('click', playMusicOnce);
           document.body.addEventListener('touchstart', playMusicOnce);
           document.body.addEventListener('wheel', playMusicOnce);
@@ -117,6 +204,7 @@
       }
     });
   }
+
   function playMusicOnce() {
     if (musicPlayer && typeof musicPlayer.unMute === 'function') {
       musicPlayer.seekTo(33, true);
@@ -124,6 +212,7 @@
       musicPlayer.setVolume(50);
       document.getElementById('click-to-play').style.opacity = '0';
       setTimeout(() => document.getElementById('click-to-play').style.display = 'none', 500);
+
       document.body.removeEventListener('click', playMusicOnce);
       document.body.removeEventListener('touchstart', playMusicOnce);
       document.body.removeEventListener('wheel', playMusicOnce);
