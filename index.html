@@ -4,135 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quách Văn Quyền | Personal Profile</title>
-
-  <!-- SEO Metadata -->
-  <meta name="description" content="Official personal introduction of Quách Văn Quyền - Passionate explorer, music lover, and living sincerely.">
-  <meta name="keywords" content="Quách Văn Quyền, Personal Website, Profile, Music, Life Journey, Love Story">
-  <meta name="author" content="Quách Văn Quyền">
-  <meta property="og:title" content="Quách Văn Quyền | Personal Profile">
-  <meta property="og:description" content="Passionate explorer, music lover, and living sincerely.">
-  <meta property="og:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
-  <meta property="og:url" content="https://quyen261226.github.io/personal-intro/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Quách Văn Quyền | Personal Profile">
-  <meta name="twitter:description" content="Passionate explorer, music lover, and living sincerely.">
-  <meta name="twitter:image" content="https://i.imgur.com/g3Bbyeh.jpeg">
+  <meta name="description" content="Trang cá nhân của Quách Văn Quyền - sống chân thành, yêu âm nhạc, tìm kiếm sự kết nối thực sự.">
   <meta name="theme-color" content="#0f3460">
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Quách Văn Quyền",
-    "email": "quachvanquyen261226@gmail.com",
-    "birthDate": "2006-12-26",
-    "url": "https://quyen261226.github.io/personal-intro/",
-    "image": "https://i.imgur.com/g3Bbyeh.jpeg",
-    "sameAs": [
-      "https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr"
-    ]
-  }
-  </script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-902BEJDWQF"></script>
+  <link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-902BEJDWQF');
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
   </script>
-
   <style>
-    :root {
-      --bg-color: #000;
-      --text-color: #fff;
-      --accent-color: #00bfff;
-    }
-    [data-theme="light"] {
-      --bg-color: #f9f9f9;
-      --text-color: #111;
-      --accent-color: #007acc;
-    }
     body {
-      margin: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
       font-family: Arial, sans-serif;
-      transition: background 0.5s, color 0.5s;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
       overflow-x: hidden;
     }
-    .toggle-theme {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.1);
-      color: var(--accent-color);
-      border: 1px solid var(--accent-color);
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 999;
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
     }
+    .section { margin-bottom: 40px; }
+    h1, h2 { color: #00bfff; text-align: center; }
+    p, li { font-size: 16px; line-height: 1.6; }
+    .quote, .message { font-style: italic; color: #ccc; text-align: center; margin-top: 40px; }
     #click-to-play {
       position: fixed;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       background: rgba(0,0,0,0.7);
-      color: var(--accent-color);
+      color: #00bfff;
       padding: 10px 20px;
       border-radius: 8px;
       font-size: 16px;
       z-index: 1000;
-    }
-    .container {
-      max-width: 800px;
-      margin: 80px auto 60px;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
-    }
-    .avatar {
-      width: 130px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: block;
-      box-shadow: 0 0 30px rgba(0,191,255,0.8);
-      transition: 0.5s;
-    }
-    .avatar:hover {
-      transform: scale(1.1) rotate(3deg);
-      box-shadow: 0 0 40px rgba(0,191,255,1);
-    }
-    h1, h2 {
-      text-align: center;
-      color: var(--accent-color);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.8;
-    }
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-    a:hover {
-      text-shadow: 0 0 5px var(--accent-color);
-    }
-    .section {
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 40px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    .divider {
-      height: 1px;
-      background: rgba(255,255,255,0.3);
-      margin: 40px 0;
     }
     canvas {
       position: fixed;
@@ -146,166 +55,159 @@
   </style>
 </head>
 
-<body data-theme="dark">
-<button class="toggle-theme" onclick="toggleTheme()">Toggle Light/Dark</button>
-
+<body>
+<div id="click-to-play">Click or scroll to play music 🎵</div>
 <canvas id="stars"></canvas>
 <canvas id="fireflies"></canvas>
 <canvas id="ripple-canvas"></canvas>
-<div id="click-to-play">Click or scroll to play music 🎵</div>
+
+<iframe id="youtube-music"
+  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&mute=1&autoplay=1&loop=1&playlist=QIrs3hRL-4g"
+  style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" frameborder="0" allow="autoplay">
+</iframe>
 
 <div class="container">
-  <img src="https://i.imgur.com/g3Bbyeh.jpeg" alt="Avatar" class="avatar">
-  <h1 id="typewriter-text"></h1>
-  <div class="divider"></div>
+  <h1>Quách Văn Quyền</h1>
 
   <div class="section">
-    <h2>QUACH VAN QUYEN</h2>
+    <h2>Giới thiệu</h2>
     <ul>
-      <li><strong>Birthday:</strong> 26/12/2006</li>
-      <li><strong>Address:</strong> Wherever you want me to be</li>
+      <li><strong>Sinh nhật:</strong> 26/12/2006</li>
+      <li><strong>Địa chỉ:</strong> Wherever you want me to be</li>
       <li><strong>Email:</strong> quachvanquyen261226@gmail.com</li>
-      <li><strong>Hobbies:</strong> Exploring unknown places, learning new things</li>
+      <li><strong>Sở thích:</strong> Khám phá, âm nhạc, và học hỏi điều mới</li>
       <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr" target="_blank">Connect with me</a></li>
     </ul>
   </div>
 
-  <div class="divider"></div>
+  <div class="section">
+    <h2>Life Motto</h2>
+    <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
+  </div>
 
-  <div class="section"><h2>Personality</h2><p>I am a calm and reserved person. I don't talk much, but when I meet the right person and truly understand them, I open up, I joke, and I share my world with them.</p></div>
+  <div class="section">
+    <h2>Hành trình cảm xúc</h2>
+    <ul>
+      <li>2006 – Tôi đến với thế giới này, lặng lẽ như cách tôi đang sống.</li>
+      <li>2018 – Tôi bắt đầu hiểu sự cô đơn có thể vừa nhẹ tênh, vừa nặng trĩu.</li>
+      <li>06/2024 – Tôi biết yêu… và biết thất vọng.</li>
+      <li>2025 – Tôi chưa hết buồn, nhưng tôi đã biết sống vì chính mình.</li>
+    </ul>
+  </div>
 
-  <div class="divider"></div>
+  <div class="section">
+    <h2>Tôi đang tìm...</h2>
+    <p><em>Tôi đang tìm một người không cần hoàn hảo – chỉ cần không giả vờ.</em></p>
+  </div>
 
-  <div class="section"><h2>Passion</h2><p>Music has always been a companion in my life — especially sad songs, which seem to speak the words my heart sometimes can't.</p></div>
+  <div class="section">
+    <h2>Nếu bạn là tôi...</h2>
+    <p>Nếu bạn là tôi, với tất cả điều đã trải qua, bạn sẽ chọn im lặng hay nói thật lòng – dù biết trước kết quả vẫn là buồn?</p>
+    <p>Tôi sẽ vẫn nói thật.<br>
+    Không phải vì hy vọng – mà vì tôi không muốn sống trong tiếc nuối.<br>
+    Tôi không giả vờ, vì tôi không muốn trái tim mình im lặng mãi.</p>
+  </div>
 
-  <div class="divider"></div>
-
-  <div class="section"><h2>Future Direction</h2><p>I only know that I am entangled in a one-sided love, trying to find my way through it.</p></div>
-
-  <div class="divider"></div>
-
-  <div class="section"><h2>My Love Story</h2><p>Somewhat disappointed with love. But still grateful for knowing how to love wholeheartedly.</p></div>
-
-  <div class="divider"></div>
-
-  <div class="section"><h2>Life Motto</h2><p><em>"I believe in kindness, loyalty, and perseverance."</em></p></div>
+  <div class="section">
+    <h2>Lời nhắn cuối cùng</h2>
+    <p>Nếu bạn đọc đến đây, có thể bạn là người đã từng bước vào đời tôi – hoặc sắp bước vào. Cảm ơn vì đã dừng lại, dù chỉ là vài giây…</p>
+  </div>
 </div>
 
-<iframe id="youtube-music" src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=QIrs3hRL-4g" style="position: absolute; width: 1px; height: 1px; opacity: 0;" frameborder="0" allow="autoplay"></iframe>
-
 <script>
-const text = "Hello, my name is Quyen";
-let index = 0;
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("typewriter-text").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, 100);
-  }
-}
-typeWriter();
-
-function toggleTheme() {
-  const current = document.body.getAttribute("data-theme");
-  document.body.setAttribute("data-theme", current === "light" ? "dark" : "light");
-}
-
-const stars = document.getElementById('stars').getContext('2d');
-stars.canvas.width = window.innerWidth;
-stars.canvas.height = window.innerHeight;
-let starArray = [];
-for (let i = 0; i < 150; i++) {
-  starArray.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 2, speed: Math.random() * 0.5});
-}
-function drawStars() {
-  stars.clearRect(0, 0, stars.canvas.width, stars.canvas.height);
-  stars.fillStyle = '#fff';
-  for (let s of starArray) {
-    stars.beginPath();
-    stars.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-    stars.fill();
-    s.x += s.speed;
-    if (s.x > window.innerWidth) s.x = 0;
-  }
-  requestAnimationFrame(drawStars);
-}
-drawStars();
-
-const fireflies = document.getElementById('fireflies').getContext('2d');
-fireflies.canvas.width = window.innerWidth;
-fireflies.canvas.height = window.innerHeight;
-let flies = [];
-for (let i = 0; i < 50; i++) {
-  flies.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 3 + 1, dx: Math.random() * 2 - 1, dy: Math.random() * 2 - 1});
-}
-function drawFireflies() {
-  fireflies.clearRect(0, 0, fireflies.canvas.width, fireflies.canvas.height);
-  fireflies.fillStyle = 'rgba(255,255,200,0.7)';
-  for (let f of flies) {
-    fireflies.beginPath();
-    fireflies.arc(f.x, f.y, f.size, 0, Math.PI * 2);
-    fireflies.fill();
-    f.x += f.dx;
-    f.y += f.dy;
-    if (f.x < 0 || f.x > window.innerWidth) f.dx *= -1;
-    if (f.y < 0 || f.y > window.innerHeight) f.dy *= -1;
-  }
-  requestAnimationFrame(drawFireflies);
-}
-drawFireflies();
-
-const rippleCanvas = document.getElementById('ripple-canvas');
-const rippleCtx = rippleCanvas.getContext('2d');
-rippleCanvas.width = window.innerWidth;
-rippleCanvas.height = window.innerHeight;
-let ripples = [];
-document.addEventListener('click', e => {
-  ripples.push({x: e.clientX, y: e.clientY, r: 0});
-});
-function drawRipples() {
-  rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
-  rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
-  for (let r of ripples) {
-    rippleCtx.beginPath();
-    rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
-    rippleCtx.stroke();
-    r.r += 2;
-    if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
-  }
-  requestAnimationFrame(drawRipples);
-}
-drawRipples();
-
-let musicPlayer;
-let musicReady = false;
-function onYouTubeIframeAPIReady() {
-  musicPlayer = new YT.Player('youtube-music', {
-    events: {
-      'onReady': function(event) {
-        musicReady = true;
+  let musicPlayer;
+  function onYouTubeIframeAPIReady() {
+    musicPlayer = new YT.Player('youtube-music', {
+      events: {
+        'onReady': function(event) {
+          document.body.addEventListener('click', playMusicOnce);
+          document.body.addEventListener('touchstart', playMusicOnce);
+          document.body.addEventListener('wheel', playMusicOnce);
+        }
       }
-    }
-  });
-}
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-document.getElementsByTagName('head')[0].appendChild(tag);
-
-function playMusicOnce() {
-  if (musicReady) {
-    musicPlayer.seekTo(33, true);
-    musicPlayer.unMute();
-    musicPlayer.setVolume(50);
-    document.getElementById('click-to-play').style.opacity = '0';
-    setTimeout(() => document.getElementById('click-to-play').style.display = 'none', 500);
-    document.body.removeEventListener('click', playMusicOnce);
-    document.body.removeEventListener('touchstart', playMusicOnce);
-    document.body.removeEventListener('wheel', playMusicOnce);
+    });
   }
-}
-document.body.addEventListener('click', playMusicOnce);
-document.body.addEventListener('touchstart', playMusicOnce);
-document.body.addEventListener('wheel', playMusicOnce);
+  function playMusicOnce() {
+    if (musicPlayer && typeof musicPlayer.unMute === 'function') {
+      musicPlayer.seekTo(33, true);
+      musicPlayer.unMute();
+      musicPlayer.setVolume(50);
+      document.getElementById('click-to-play').style.opacity = '0';
+      setTimeout(() => document.getElementById('click-to-play').style.display = 'none', 500);
+      document.body.removeEventListener('click', playMusicOnce);
+      document.body.removeEventListener('touchstart', playMusicOnce);
+      document.body.removeEventListener('wheel', playMusicOnce);
+    }
+  }
+
+  // Hiệu ứng sao
+  const stars = document.getElementById('stars').getContext('2d');
+  stars.canvas.width = window.innerWidth;
+  stars.canvas.height = window.innerHeight;
+  let starArray = [];
+  for (let i = 0; i < 150; i++) {
+    starArray.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 2, speed: Math.random() * 0.5});
+  }
+  function drawStars() {
+    stars.clearRect(0, 0, stars.canvas.width, stars.canvas.height);
+    stars.fillStyle = '#fff';
+    for (let s of starArray) {
+      stars.beginPath();
+      stars.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+      stars.fill();
+      s.x += s.speed;
+      if (s.x > window.innerWidth) s.x = 0;
+    }
+    requestAnimationFrame(drawStars);
+  }
+  drawStars();
+
+  // Hiệu ứng đom đóm
+  const fireflies = document.getElementById('fireflies').getContext('2d');
+  fireflies.canvas.width = window.innerWidth;
+  fireflies.canvas.height = window.innerHeight;
+  let flies = [];
+  for (let i = 0; i < 50; i++) {
+    flies.push({x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, size: Math.random() * 3 + 1, dx: Math.random() * 2 - 1, dy: Math.random() * 2 - 1});
+  }
+  function drawFireflies() {
+    fireflies.clearRect(0, 0, fireflies.canvas.width, fireflies.canvas.height);
+    fireflies.fillStyle = 'rgba(255,255,200,0.7)';
+    for (let f of flies) {
+      fireflies.beginPath();
+      fireflies.arc(f.x, f.y, f.size, 0, Math.PI * 2);
+      fireflies.fill();
+      f.x += f.dx;
+      f.y += f.dy;
+      if (f.x < 0 || f.x > window.innerWidth) f.dx *= -1;
+      if (f.y < 0 || f.y > window.innerHeight) f.dy *= -1;
+    }
+    requestAnimationFrame(drawFireflies);
+  }
+  drawFireflies();
+
+  // Hiệu ứng ripple click
+  const rippleCanvas = document.getElementById('ripple-canvas');
+  const rippleCtx = rippleCanvas.getContext('2d');
+  rippleCanvas.width = window.innerWidth;
+  rippleCanvas.height = window.innerHeight;
+  let ripples = [];
+  document.addEventListener('click', e => {
+    ripples.push({x: e.clientX, y: e.clientY, r: 0});
+  });
+  function drawRipples() {
+    rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+    rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
+    for (let r of ripples) {
+      rippleCtx.beginPath();
+      rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+      rippleCtx.stroke();
+      r.r += 2;
+      if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
+    }
+    requestAnimationFrame(drawRipples);
+  }
+  drawRipples();
 </script>
 </body>
 </html>
