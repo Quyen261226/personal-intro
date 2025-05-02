@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quách Văn Quyền | Personal Profile</title>
-  <meta name="description" content="Trang cá nhân của Quách Văn Quyền - sống chân thành, yêu âm nhạc, tìm kiếm sự kết nối thực sự.">
+  <meta name="description" content="Personal page of Quách Văn Quyền - sincere living, music lover, and seeking true connection.">
   <meta name="theme-color" content="#0f3460">
   <link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
   <script>
@@ -30,7 +30,6 @@
     .section { margin-bottom: 40px; }
     h1, h2 { color: #00bfff; text-align: center; }
     p, li { font-size: 16px; line-height: 1.6; }
-    .quote, .message { font-style: italic; color: #ccc; text-align: center; margin-top: 40px; }
     #click-to-play {
       position: fixed;
       top: 20px;
@@ -54,7 +53,6 @@
     }
   </style>
 </head>
-
 <body>
 <div id="click-to-play">Click or scroll to play music 🎵</div>
 <canvas id="stars"></canvas>
@@ -70,47 +68,14 @@
   <h1>Quách Văn Quyền</h1>
 
   <div class="section">
-    <h2>Giới thiệu</h2>
+    <h2>Introduction</h2>
     <ul>
-      <li><strong>Sinh nhật:</strong> 26/12/2006</li>
-      <li><strong>Địa chỉ:</strong> Wherever you want me to be</li>
+      <li><strong>Birthday:</strong> 26/12/2006</li>
+      <li><strong>Address:</strong> Wherever you want me to be</li>
       <li><strong>Email:</strong> quachvanquyen261226@gmail.com</li>
-      <li><strong>Sở thích:</strong> Khám phá, âm nhạc, và học hỏi điều mới</li>
+      <li><strong>Hobbies:</strong> Exploring, listening to music, and learning new things</li>
       <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr" target="_blank">Connect with me</a></li>
     </ul>
-  </div>
-
-  <div class="section">
-    <h2>Life Motto</h2>
-    <p><em>"I believe in kindness, loyalty, and perseverance."</em></p>
-  </div>
-
-  <div class="section">
-    <h2>Hành trình cảm xúc</h2>
-    <ul>
-      <li>2006 – Tôi đến với thế giới này, lặng lẽ như cách tôi đang sống.</li>
-      <li>2018 – Tôi bắt đầu hiểu sự cô đơn có thể vừa nhẹ tênh, vừa nặng trĩu.</li>
-      <li>06/2024 – Tôi biết yêu… và biết thất vọng.</li>
-      <li>2025 – Tôi chưa hết buồn, nhưng tôi đã biết sống vì chính mình.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Tôi đang tìm...</h2>
-    <p><em>Tôi đang tìm một người không cần hoàn hảo – chỉ cần không giả vờ.</em></p>
-  </div>
-
-  <div class="section">
-    <h2>Nếu bạn là tôi...</h2>
-    <p>Nếu bạn là tôi, với tất cả điều đã trải qua, bạn sẽ chọn im lặng hay nói thật lòng – dù biết trước kết quả vẫn là buồn?</p>
-    <p>Tôi sẽ vẫn nói thật.<br>
-    Không phải vì hy vọng – mà vì tôi không muốn sống trong tiếc nuối.<br>
-    Tôi không giả vờ, vì tôi không muốn trái tim mình im lặng mãi.</p>
-  </div>
-
-  <div class="section">
-    <h2>Lời nhắn cuối cùng</h2>
-    <p>Nếu bạn đọc đến đây, có thể bạn là người đã từng bước vào đời tôi – hoặc sắp bước vào. Cảm ơn vì đã dừng lại, dù chỉ là vài giây…</p>
   </div>
 </div>
 
@@ -140,7 +105,6 @@
     }
   }
 
-  // Hiệu ứng sao
   const stars = document.getElementById('stars').getContext('2d');
   stars.canvas.width = window.innerWidth;
   stars.canvas.height = window.innerHeight;
@@ -162,7 +126,6 @@
   }
   drawStars();
 
-  // Hiệu ứng đom đóm
   const fireflies = document.getElementById('fireflies').getContext('2d');
   fireflies.canvas.width = window.innerWidth;
   fireflies.canvas.height = window.innerHeight;
@@ -186,7 +149,6 @@
   }
   drawFireflies();
 
-  // Hiệu ứng ripple click
   const rippleCanvas = document.getElementById('ripple-canvas');
   const rippleCtx = rippleCanvas.getContext('2d');
   rippleCanvas.width = window.innerWidth;
