@@ -77,8 +77,9 @@
       <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/15d1eqhSQF/?mibextid=wwXIfr" target="_blank">Connect with me</a></li>
     </ul>
   </div>
+
   <div class="section">
-    <h2>Hành trình cảm xúc</h2>
+    <h2>Emotional Journey</h2>
     <ul>
       <li>2006 – Tôi đến với thế giới này, lặng lẽ như cách tôi đang sống.</li>
       <li>2018 – Tôi bắt đầu hiểu sự cô đơn có thể vừa nhẹ tênh, vừa nặng trĩu.</li>
@@ -88,12 +89,12 @@
   </div>
 
   <div class="section">
-    <h2>Tôi đang tìm...</h2>
+    <h2>What I'm Looking For...</h2>
     <p><em>Tôi đang tìm một người không cần hoàn hảo – chỉ cần không giả vờ.</em></p>
   </div>
 
   <div class="section">
-    <h2>Nếu bạn là tôi...</h2>
+    <h2>If You Were Me...</h2>
     <p>Nếu bạn là tôi, với tất cả điều đã trải qua, bạn sẽ chọn im lặng hay nói thật lòng – dù biết trước kết quả vẫn là buồn?</p>
     <p>Tôi sẽ vẫn nói thật.<br>
     Không phải vì hy vọng – mà vì tôi không muốn sống trong tiếc nuối.<br>
@@ -101,7 +102,7 @@
   </div>
 
   <div class="section">
-    <h2>Lời nhắn cuối cùng</h2>
+    <h2>Final Message</h2>
     <p>Nếu bạn đọc đến đây, có thể bạn là người đã từng bước vào đời tôi – hoặc sắp bước vào. Cảm ơn vì đã dừng lại, dù chỉ là vài giây…</p>
   </div>
 </div>
@@ -132,6 +133,7 @@
     }
   }
 
+  // Stars
   const stars = document.getElementById('stars').getContext('2d');
   stars.canvas.width = window.innerWidth;
   stars.canvas.height = window.innerHeight;
@@ -152,6 +154,8 @@
     requestAnimationFrame(drawStars);
   }
   drawStars();
+
+  // Fireflies
   const fireflies = document.getElementById('fireflies').getContext('2d');
   fireflies.canvas.width = window.innerWidth;
   fireflies.canvas.height = window.innerHeight;
@@ -175,6 +179,7 @@
   }
   drawFireflies();
 
+  // Ripple effect
   const rippleCanvas = document.getElementById('ripple-canvas');
   const rippleCtx = rippleCanvas.getContext('2d');
   rippleCanvas.width = window.innerWidth;
