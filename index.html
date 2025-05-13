@@ -206,3 +206,15 @@
     rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
     rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
     for (let r of ripples) {
+      rippleCtx.beginPath();
+      rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+      rippleCtx.stroke();
+      r.r += 2;
+      if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
+    }
+    requestAnimationFrame(drawRipples);
+  }
+  drawRipples();
+</script>
+</body>
+</html>
