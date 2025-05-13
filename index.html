@@ -60,7 +60,7 @@
 <canvas id="ripple-canvas"></canvas>
 
 <iframe id="youtube-music"
-  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&mute=1&autoplay=1&loop=1&playlist=QIrs3hRL-4g"
+  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&loop=1&playlist=QIrs3hRL-4g"
   style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" frameborder="0" allow="autoplay">
 </iframe>
 
@@ -75,7 +75,7 @@
       <li><strong>Email:</strong> quachvanquyen261226@gmail.com</li>
       <li><strong>Hobbies:</strong> Exploring, listening to music, and learning new things</li>
       <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100082174892699" target="_blank">Connect with me</a></li>
-      <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@quyenquyen261226" target="_blank">@quyenquyen261226</a></li>
+      <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@quyenquyen261226" target="_blank">Connect with me</a></li>
     </ul>
   </div>
 
@@ -138,6 +138,7 @@
       musicPlayer.seekTo(33, true);
       musicPlayer.unMute();
       musicPlayer.setVolume(50);
+      musicPlayer.playVideo();
       document.getElementById('click-to-play').style.opacity = '0';
       setTimeout(() => document.getElementById('click-to-play').style.display = 'none', 500);
       document.body.removeEventListener('click', playMusicOnce);
@@ -205,15 +206,3 @@
     rippleCtx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
     rippleCtx.strokeStyle = 'rgba(0,191,255,0.5)';
     for (let r of ripples) {
-      rippleCtx.beginPath();
-      rippleCtx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
-      rippleCtx.stroke();
-      r.r += 2;
-      if (r.r > 200) ripples.splice(ripples.indexOf(r), 1);
-    }
-    requestAnimationFrame(drawRipples);
-  }
-  drawRipples();
-</script>
-</body>
-</html>
