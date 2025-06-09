@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quách Văn Quyền | Personal Profile</title>
-  <meta name="description" content="Personal page of Quách Văn Quyền - sincere living, music lover, and seeking true connection.">
+  <title>Quach Van Quyen | Personal Profile</title>
+  <meta name="description" content="Personal page of Quach Van Quyen - sincere living, music lover, and seeking true connection.">
   <meta name="theme-color" content="#0f3460">
   <link rel="icon" href="https://i.imgur.com/g3Bbyeh.jpeg" type="image/jpeg">
-  <script>
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
-  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,11 +55,6 @@
 <canvas id="fireflies"></canvas>
 <canvas id="ripple-canvas"></canvas>
 
-<iframe id="youtube-music"
-  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=1&loop=1&playlist=QIrs3hRL-4g"
-  style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" frameborder="0" allow="autoplay">
-</iframe>
-
 <div class="container">
   <h1 id="typewriter-text"></h1>
 
@@ -83,31 +74,36 @@
   <div class="section">
     <h2>Emotional Journey</h2>
     <ul>
-      <li>2006 – Tôi đến với thế giới này.</li>
-      <li>2018 – Sống như những con người bình thường.</li>
-      <li>06/2024 – Tôi biết yêu và biết thất vọng.</li>
-      <li>2025 – Tôi chưa hết buồn nhưng tôi đã biết sống vì chính mình.</li>
+      <li>2006 – I came into this world.</li>
+      <li>2018 – Living like everyone else.</li>
+      <li>06/2024 – I learned what it means to love and to be disappointed.</li>
+      <li>2025 – I'm still healing, but I now know how to live for myself.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>What I'm Looking For...</h2>
-    <p><em>Tôi đang tìm một người đủ chân thành để không cần phải diễn vai ai khác trước mặt tôi.</em></p>
+    <p><em>I'm looking for someone sincere enough to not have to pretend in front of me.</em></p>
   </div>
 
   <div class="section">
     <h2>If You Were Me...</h2>
-    <p>Nếu bạn là tôi, với tất cả điều đã trải qua, bạn sẽ chọn im lặng hay nói thật lòng – dù biết trước kết quả vẫn là buồn?</p>
-    <p>Tôi sẽ vẫn nói thật.<br>
-    Không phải vì hy vọng – mà vì tôi không muốn sống trong tiếc nuối.<br>
-    Tôi không giả vờ, vì tôi không muốn trái tim mình im lặng mãi.</p>
+    <p>If you were me, having gone through everything I have, would you choose silence or honesty—even knowing the outcome would still be sadness?</p>
+    <p>I would still choose honesty.<br>
+    Not because I have hope—but because I don't want to live with regret.<br>
+    I don't pretend, because I don't want my heart to stay silent forever.</p>
   </div>
 
   <div class="section">
     <h2>Final Message</h2>
-    <p>Nếu bạn đọc đến đây, có thể bạn là người đã từng bước vào đời tôi – hoặc sắp bước vào. Cảm ơn vì đã dừng lại, dù chỉ là vài giây…</p>
+    <p>If you've read this far, maybe you're someone who has stepped into my life—or is about to. Thank you for stopping by, even if just for a few seconds…</p>
   </div>
 </div>
+
+<iframe id="youtube-music"
+  src="https://www.youtube.com/embed/QIrs3hRL-4g?enablejsapi=1&autoplay=0&loop=1&playlist=QIrs3hRL-4g"
+  style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" frameborder="0" allow="autoplay">
+</iframe>
 
 <script>
   const text = "Hello, my name is Quyen";
@@ -135,10 +131,7 @@
   }
 
   function playMusicOnce() {
-    if (musicPlayer && typeof musicPlayer.unMute === 'function') {
-      musicPlayer.seekTo(33, true);
-      musicPlayer.unMute();
-      musicPlayer.setVolume(50);
+    if (musicPlayer && typeof musicPlayer.playVideo === 'function') {
       musicPlayer.playVideo();
       document.getElementById('click-to-play').style.opacity = '0';
       setTimeout(() => document.getElementById('click-to-play').style.display = 'none', 500);
